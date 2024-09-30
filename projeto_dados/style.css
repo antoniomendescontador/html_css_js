@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+.dice-container {
+    display: flex;
+    gap: 50px;
+    perspective: 1000px;
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 1s;
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.front  { transform: rotateY(  0deg) translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.right  { transform: rotateY( 90deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX( 90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Transição suave para a mudança de cor */
+.dice {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 1s, background-color 0.5s ease;
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0; /* Cor padrão */
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Cor alterada para cada face do dado */
+#dice1 .front { background-color: #ff9999; }   /* Frente */
+#dice1 .back  { background-color: #99ccff; }   /* Trás */
+#dice1 .right { background-color: #ccff99; }   /* Direita */
+#dice1 .left  { background-color: #ffcc99; }   /* Esquerda */
+#dice1 .top   { background-color: #cc99ff; }   /* Cima */
+#dice1 .bottom{ background-color: #ffff99; }   /* Baixo */
+
+/* Segundo dado */
+#dice2 .front { background-color: #ff9999; }
+#dice2 .back  { background-color: #99ccff; }
+#dice2 .right { background-color: #ccff99; }
+#dice2 .left  { background-color: #ffcc99; }
+#dice2 .top   { background-color: #cc99ff; }
+#dice2 .bottom{ background-color: #ffff99; }
